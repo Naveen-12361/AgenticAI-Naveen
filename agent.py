@@ -30,12 +30,23 @@ def get_docker_containers():
     return result.stdout or result.stderr
 
 
+@tool
+def get_nodes():
+    """Lists all Kubernetes nodes"""
+    result = subprocess.run(
+        ["kubectl", "get", "nodes"],
+        capture_output=True,
+        text=True
+    )
+    return result.stdout or result.stderr
+
+
 # AGENT 
 # LLM + TOOLS
 
 agent = create_agent(
     model=llm, 
-    tools=[get_pods,get_docker_containers],
+    tools=[get_pods,get_docker_containers,get_nodes],
     system_prompt=(
         "You are a DevOps assistant that inspects live Kubernetes clusters and Docker "
         "environments using tools.\n"
