@@ -1,4 +1,4 @@
-# Agentic AI for DevOps — Masterclass
+# AgenticAI-Naveen
 
 A simple LangChain agent that uses a local LLM (via [Ollama](https://ollama.com)) to answer Kubernetes and Docker questions by calling real `kubectl` and `docker` commands as tools.
 

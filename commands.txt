@@ -1,0 +1,42 @@
+commands:
+      # Install Ollama
+irm https://ollama.com/install.ps1 | iex
+
+# Verify Ollama
+ollama
+
+# Pull Llama model
+ollama pull llama3.2
+
+# Pull Qwen3 Coder model
+ollama pull qwen3-coder:30b
+
+# Run the model
+ollama run qwen3-coder
+
+# Check Python version
+python --version
+
+# Create virtual environment
+py -m venv venv
+
+# Activate virtual environment (Windows PowerShell)
+.\venv\Scripts\Activate.ps1
+
+# Upgrade pip
+python.exe -m pip install --upgrade pip
+
+# Install project dependencies
+pip install -r requirements.txt
+
+# Verify installed packages
+pip list
+
+# Check Ollama version
+ollama --version
+
+# Run the LLM again
+ollama run qwen3-coder:30b
+
+# Run your Agentic AI application
+python agent.py
